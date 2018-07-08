@@ -1,0 +1,160 @@
+﻿<Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="SWTOR Utility" Height="1000" Width="946.667"
+        Loaded="Window_Loaded">
+    <Grid Height="800" Background="#FF424242">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+
+        <materialDesign:Card Grid.Row="1" Width="900" Padding="16" Height="100" Background="#FF616161">
+            <Canvas>
+                <Grid Width="800">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="20*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Content="Nom :"  Foreground="#FFE0E0E0" Margin="0,5,0,0"></Label>
+                    <TextBox   x:Name="txtBoxNom" Grid.Column="1"  Foreground="#FFE5E5E5"></TextBox>
+                    <Label Content="Classe :" Grid.Row="1" Foreground="#FFE0E0E0" Margin="0,-1,0,0"></Label>
+                    <ComboBox x:Name="comboClasse" Grid.Row="1" Grid.Column="1" />
+                </Grid>
+            </Canvas>
+        </materialDesign:Card>
+
+        <materialDesign:Card Grid.Row="2" Padding="16" Width="900" Height="250" Background="#FF616161">
+            <Canvas>
+                <Grid Width="868">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <materialDesign:Card x:Name="backRecup" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox MouseLeave="check_MouseLeave" MouseEnter="check_MouseEnter" Margin="16,0,0,56.6" x:Name="checkRecup" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Récupération" Foreground="#FFE0E0E0" Width="201" Background="#FFE0E0E0" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Image Width="30" Height="30"  x:Name="iconRecup" HorizontalAlignment="Left" Margin="5,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backArcheo"  Grid.Column="1" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox  MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter" x:Name="checkArcheo" Margin="25.2,0,0,56.6" Grid.Column="1" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Archéologie"  Foreground="#FFE0E0E0" Width="192" Background="#FFE0E0E0" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Image  Grid.Column="1"  Width="30" Height="30" x:Name="iconArcheo" HorizontalAlignment="Left" Margin="13,0,0,0"></Image>
+
+                    <materialDesign:Card x:Name="backBioanalyse" Grid.Column="2" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter"  x:Name="checkBioanalyse" Margin="23.4,0,0,56.6" Grid.Column="2" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Bioanalyse"  Foreground="#FFE0E0E0" Width="194" Background="#FFE0E0E0" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+                    <Image  Grid.Column="2" Width="30" Height="30"  x:Name="iconBioanalyse" HorizontalAlignment="Left" Margin="11,0,0,0"></Image>
+
+                    <materialDesign:Card x:Name="backPiratage" Width="251" Grid.Column="3" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox  MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter" x:Name="checkPiratage" Margin="26.8,0,0,56.6" Grid.Column="3" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Piratage"  Foreground="#FFE0E0E0" Background="#FFE0E0E0" Grid.RowSpan="2"/>
+                    <Image Grid.Column="3"  Width="30" Height="30"  x:Name="iconPiratage" HorizontalAlignment="Left" Margin="14,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backDiplo" Grid.Row="1" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox  MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter" x:Name="checkDiplo" Margin="16,0.2,0,56.4" Grid.Row="1" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Diplomatie"  Foreground="#FFE0E0E0" Background="#FFE0E0E0" HorizontalAlignment="Left" Width="201" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Image Grid.Row="1" Width="30" Height="30"  x:Name="iconDiplo" HorizontalAlignment="Left" Margin="5,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backArtifice"  Grid.Row="1" Grid.Column="1" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox  MouseLeave="check_MouseLeave" MouseEnter="check_MouseEnter"  Margin="25.2,0.2,0,56.4" x:Name="checkArtifice" Grid.Row="1" Grid.Column="1" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Artifice" Foreground="#FFE0E0E0" Background="#FFE0E0E0" HorizontalAlignment="Left" Width="192" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Image Grid.Row="1" Grid.Column="1" Width="30" Height="30" x:Name="iconArtifice" HorizontalAlignment="Left" Margin="13,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backInvest"  Grid.Row="1" Grid.Column="2" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter"  x:Name="checkInvest" Margin="23.4,0.2,0.2,56.4" Grid.Row="1" Grid.Column="2" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Investigation"  Foreground="#FFE0E0E0" Background="#FFE0E0E0" Grid.RowSpan="2"/>
+                    <Image Grid.Row="1" Grid.Column="2" Width="30" Height="30" x:Name="iconInvest" HorizontalAlignment="Left" Margin="11,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backArmes"  Grid.Row="1" Grid.Column="3" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox  MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter" x:Name="checkArmes" Margin="26.8,0.2,0,56.4" Grid.Row="1" Grid.Column="3"  Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Fabrication d'armes" Foreground="#FFE0E0E0" Background="#FFE0E0E0" Grid.RowSpan="2"/>
+                    <Image Grid.Row="1" Grid.Column="3" Width="30" Height="30" x:Name="iconArmes" HorizontalAlignment="Left" Margin="14,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backArmures"  Grid.Row="2" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox  MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter" x:Name="checkArmures" Margin="16,0.4,0,0.4" Grid.Row="2" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Fabrication d'armure" Foreground="#FFE0E0E0" Width="201" Background="#FFE0E0E0" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+                    <Image Grid.Row="2" Width="30" Height="30"  x:Name="iconArmures" HorizontalAlignment="Left" Margin="5,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backBioch"  Grid.Row="2" Grid.Column="1" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox  MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter" x:Name="checkBioch" Margin="25.2,0.4,217.2,56.2" Grid.Row="2" Grid.Column="1" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Biochimie" Foreground="#FFE0E0E0" Background="#FFE0E0E0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <Image  Grid.Row="2" Grid.Column="1" Width="30" Height="30" x:Name="iconBioch" HorizontalAlignment="Left" Margin="13,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backCommerce" Grid.Row="2" Grid.Column="2" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter"  x:Name="checkCommerce" Margin="23.4,0.4,0.2,56.2" Grid.Row="2" Grid.Column="2" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Commerce Illégal" Foreground="#FFE0E0E0" Background="#FFE0E0E0" Grid.RowSpan="2"/>
+                    <Image Grid.Row="2" Grid.Column="2" Width="30" Height="30" x:Name="iconCommerce" HorizontalAlignment="Left" Margin="11,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backChasse"  Grid.Row="2" Grid.Column="3" Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox  MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter" x:Name="checkChasse" Margin="26.8,0.4,0,0.4" Grid.Row="2" Grid.Column="3" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Chasse au Trésor" Foreground="#FFE0E0E0" Background="#FFE0E0E0"/>
+                    <Image Grid.Row="2" Grid.Column="3" Width="30" Height="30"  x:Name="iconChasse" HorizontalAlignment="Left" Margin="14,0,0,0"></Image>
+
+                    <materialDesign:Card x:Name="backSynte"  Grid.Row="3" Grid.Column="1"  Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox MouseLeave="check_MouseLeave"  MouseEnter="check_MouseEnter"  x:Name="checkSynthe" Margin="25.2,0.6,217.2,0.2" Grid.Row="3" Grid.Column="1" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Synthétisage" Foreground="#FFE0E0E0" Background="#FFE0E0E0" Grid.ColumnSpan="2"/>
+                    <Image Grid.Row="3" Grid.Column="1" Width="30" Height="30"  x:Name="iconSynte" HorizontalAlignment="Left" Margin="13,0,0,0"></Image>
+
+                    <materialDesign:Card  x:Name="backCyber"  Grid.Row="3" Grid.Column="2"  Width="251" Height="57" Visibility="Hidden"></materialDesign:Card>
+                    <CheckBox   MouseLeave="check_MouseLeave" MouseEnter="check_MouseEnter" x:Name="checkCyber" Margin="23.4,0.6,0,0.2" Grid.Row="3" Grid.Column="2" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Content="Cybernétique" Foreground="#FFE0E0E0" Width="194" BorderBrush="Black" Background="#FFE0E0E0" HorizontalAlignment="Left"/>
+                    <Image  Grid.Row="3" Grid.Column="2"  Width="30" Height="30" x:Name="iconCyber" HorizontalAlignment="Left" Margin="11,0,0,0"></Image>
+                </Grid>
+            </Canvas>
+        </materialDesign:Card>
+        <materialDesign:Card Grid.Row="3" Padding="16" Width="900" Height="100" Margin="0,4,0,0" Background="#FF616161">
+            <Canvas>
+                <Grid Width="900">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="comp1" TextAlignment="Center" TextWrapping="Wrap" Text="Compétence 1"/>
+                    <TextBlock Grid.Column="1" x:Name="comp2" TextAlignment="Center" TextWrapping="Wrap" Text="Compétence 2"/>
+                    <TextBlock Grid.Column="2" x:Name="comp3" TextAlignment="Center" TextWrapping="Wrap" Text="Compétence 3"/>
+
+                    <Slider Grid.Row="1" x:Name="barComp1" Width="200" ValueChanged="barComp1_ValueChanged" Height="23"/>
+                    <Slider Grid.Row="1" Grid.Column="1" x:Name="barComp2" Width="200" ValueChanged="barComp2_ValueChanged" Height="23"/>
+                    <Slider Grid.Row="1" Grid.Column="2" x:Name="barComp3" Width="200" Foreground="#FFE5E5E5" ValueChanged="barComp3_ValueChanged" Height="23"/>
+
+                    <Label Grid.Row="2" x:Name="labelComp1" Content="0"  Width="40" Foreground="#FFE0E0E0"/>
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="labelComp2" Content="0" Width="40" Foreground="#FFE0E0E0"/>
+                    <Label Grid.Row="2" Grid.Column="2" x:Name="labelComp3" Content="0" Width="40" Foreground="#FFE0E0E0"/>
+                </Grid>
+
+            </Canvas>
+        </materialDesign:Card>
+        <Canvas Grid.Row="4" Width="400">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Content="Annuler" Margin="10" Width="200" Click="Button_Click" Foreground="#FF424242" Background="#FF9E9E9E"/>
+                <Button Click="Button_Click_1" Margin="10"  Width="200" Grid.Column="1" Content="Valider" Foreground="#FF424242" Background="#FF9E9E9E"/>
+            </Grid>
+        </Canvas>
+    </Grid>
+</Window>
